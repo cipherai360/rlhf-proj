@@ -1,0 +1,32 @@
+[
+  {
+    "id": "spider_dev_000000",
+    "question": "How many singers do we have?",
+    "gold_sql": "SELECT count(*) FROM singer",
+    "predicted_sql": "SELECT COUNT(*) FROM singer;"
+  },
+  {
+    "id": "spider_dev_000001",
+    "question": "What is the total number of singers?",
+    "gold_sql": "SELECT count(*) FROM singer",
+    "predicted_sql": "SELECT COUNT(*) FROM singer;"
+  },
+  {
+    "id": "spider_dev_000002",
+    "question": "Show name, country, age for all singers ordered by age from the oldest to the youngest.",
+    "gold_sql": "SELECT name ,  country ,  age FROM singer ORDER BY age DESC",
+    "predicted_sql": "SELECT T1.Name, T1.Country, T1.Age FROM singer AS T1 INNER JOIN concert AS T2 ON T1.Singer_ID = T2.Singer_ID ORDER BY T1.Age ASC;"
+  },
+  {
+    "id": "spider_dev_000003",
+    "question": "What are the names, countries, and ages for every singer in descending order of age?",
+    "gold_sql": "SELECT name ,  country ,  age FROM singer ORDER BY age DESC",
+    "predicted_sql": "SELECT T1.Name AS SingerName, T1.Country AS Country, T1.Age AS Age FROM singer AS T1 INNER JOIN concert AS T2 ON T1.Singer_ID = T2.Singer_ID ORDER BY T1.Age DESC;"
+  },
+  {
+    "id": "spider_dev_000004",
+    "question": "What is the average, minimum, and maximum age of all singers from France?",
+    "gold_sql": "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'",
+    "predicted_sql": "SELECT AVG(Age), MIN(Age), MAX(Age) FROM singer WHERE Country = 'France' GROUP BY Singer_ID;"
+  }
+]
