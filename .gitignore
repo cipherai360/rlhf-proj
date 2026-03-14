@@ -3,3 +3,7 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 .DS_Store
+# Ignore raw Spider dataset
+data/raw/
+*.sqlite
+.DS_Store
